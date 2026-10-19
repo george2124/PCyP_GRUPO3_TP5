@@ -10,6 +10,8 @@ public class CalculadorTabla extends Thread{
 
      public void run() {
          // El cálculo y la impresión completa de la tabla se sincronizan
+    	 //métodos synchronized de Java (monitores internos) para ordenar la salida por consola, 
+    	 //evitando que los números de diferentes tablas se mezclen.
          synchronized (cerrojoImpresion) {
              System.out.println("--- TABLA DEL " + numeroTabla + " ---");
              for (int i = 1; i <= 10; i++) {
